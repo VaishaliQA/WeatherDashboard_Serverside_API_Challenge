@@ -19,10 +19,15 @@ Recent Saved city
 
 ### Features
 Dynamically created HTML elmentes and updated CSS.
-Added city name in local storage which is entered by user
+
+Added city name in local storage which is entered by user.
+
 Used third party weatheroneAPI to retrive weather forcast data.
+
 Displayed current and 5 days furure forcast weather data in page.
-IF the API call is unsucessful then ajax error message is displayed "please enter valid city name"
+
+IF the API call is unsucessful then ajax error message is displayed "please enter valid city name".
+
 Every time, User can see city which is enterd by user previously run.
 
 ### Technologies Used
