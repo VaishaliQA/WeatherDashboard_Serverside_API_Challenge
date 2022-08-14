@@ -96,7 +96,7 @@ function getWeatherOneAPI(lat, long) {
         .addClass("img-fluid")
         .css({ width: "100%" });
       var pTemp = $("<p>").text("Temp: " + dailyTemp + "° F");
-      var pWind = $("<p>").text("Wind: " + dailyWind+ " MPH")
+      var pWind = $("<p>").text("Wind: " + dailyWind + " MPH")
       var pHum = $("<p>").text("Humidity: " + dailyHum + "%");
 
       //appends the dynamic elements to the html
