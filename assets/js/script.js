@@ -74,7 +74,6 @@ function getWeatherOneAPI(lat, long) {
 
     //array for the daily response
     var dailyForecast = response.daily;
-    console.log("dailysss",dailyForecast)
 
     for (i = 1; i < dailyForecast.length - 2; i++) {
       // create variable and assign value to those variable
