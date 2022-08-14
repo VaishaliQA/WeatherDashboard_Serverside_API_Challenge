@@ -1,6 +1,6 @@
 # WeatherDashboard_Serverside_API_Challenge
 ### Description
-Weather dashboard application with showing current weather and 5 days future weather forecast for the location entered by User. Dashboard also shows history of last 5 locations entered by user.
+Weather dashboard application with showing current weather and 5 days future weather forecast for the location entered by User. Dashboard also shows history of last city entered by user.
 
 ### Deployment Link
 https://vaishaliqa.github.io/WeatherDashboard_Serverside_API_Challenge/
@@ -27,7 +27,7 @@ Use third party weatheroneAPI to retrive weather forcast data.
 
 Display current and 5 days furure forcast weather data in page.
 
-IF the API call is unsucessful then ajax error message is displayed "please enter valid city name".
+If the API call is unsucessful then ajax error message is displayed "please enter a valid city name".
 
 Every time, User can see city which is enterd by user previously run.
 
