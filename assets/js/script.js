@@ -74,6 +74,7 @@ function getWeatherOneAPI(lat, long) {
 
     //array for the daily response
     var dailyForecast = response.daily;
+    console.log("dailysss",dailyForecast)
 
     for (i = 1; i < dailyForecast.length - 2; i++) {
       // create variable and assign value to those variable
@@ -83,6 +84,7 @@ function getWeatherOneAPI(lat, long) {
       var dailyTemp = dailyForecast[i].temp.day;
       var dailyHum = dailyForecast[i].humidity;
       var dailyIcon = dailyForecast[i].weather[0].icon;
+      var dailyWind = dailyForecast[i].wind_speed;
 
       //creates dynamic elements and add text, attribute to elments
       var dailyDiv = $("<div class='card text-white bg-primary p-2'>");
@@ -95,12 +97,14 @@ function getWeatherOneAPI(lat, long) {
         .addClass("img-fluid")
         .css({ width: "100%" });
       var pTemp = $("<p>").text("Temp: " + dailyTemp + "° F");
+      var pWind = $("<p>").text("Wind: " + dailyWind+ " MPH")
       var pHum = $("<p>").text("Humidity: " + dailyHum + "%");
 
       //appends the dynamic elements to the html
       dailyDiv.append(hDate);
       dailyDiv.append(imgIcon);
       dailyDiv.append(pTemp);
+      dailyDiv.append(pWind);
       dailyDiv.append(pHum);
       $(".card-deck").append(dailyDiv);
       //displays this html to the user
