@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import google font apis, bootstrap, custom stylesheet and moment js file -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="./assets/css/stylesheet.css"></link>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <!-- Header section -->
+    <header class="navbar navbar-dark">
+        <h1 class="display-4 text-light mx-auto">Weather Dashboard</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <!-- Column for sidebar -->
+            <aside class="col-lg-4">
+                <div class="card bg-light p-2 mb-2">
+                    <!-- Search form -->
+                    <h4>Search for a City:</h4>
+                    <form id="city-searchform">
+                        <input class="form-control mt-2" id="city-input" type="search" aria-label="Search">    
+                                <button type="button" class="btn btn-primary form-control mt-2" type="submit" id="searchBtn">
+                                    Search
+                                </button>              
+                    </form>
+                    <!-- New search buttons created for each city searched will be added to the list -->
+                    <ul class="list-group mt-2" id="city-list">
+                        <!-- Error Message is displayed when user enterd invalid city -->
+                        <p id="errorMsg" style="display:none;" class="error">*Please enter a valid city name.</p>
+                    </ul>
+                </div>
+            </aside>
+            <!-- Second column to hold the current and 5-day forecast -->
+            <div class="col-lg-8">
+                <!-- Placeholders for the current weather data. It will display only when user search for a city. -->
+                <section class="card p-2" id="current" style="display:none;">
+                    <h1 id="city"></h1>
+                    <h5 id="date"></h5>
+                    <p id="temp"></p>
+                    <p id="humidity"></p>
+                    <p id="wind"></p>
+                    <p id="uv-index">UV Index: <span class="color"></span></p>
+                </section>
+                <!-- Placehold for the 5 days forecast -->
+                <section class="mt-2 mb-2" id="five-day" style="display:none;">
+                    <h3>5-Day Forecast:</h3>
+                    <!-- Cards will be dynamically created the the weather day for the 5-day forecast -->
+                    <div class="card-deck">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Import js file -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

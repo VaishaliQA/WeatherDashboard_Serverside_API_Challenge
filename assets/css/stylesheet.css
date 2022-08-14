@@ -1,0 +1,9 @@
+/* style apply to header section */
+header {
+  background-image: linear-gradient(to right, blue, rgb(37, 3, 104));
+}
+
+/* style color apply to p tag */
+.error {
+  color: red;
+}
