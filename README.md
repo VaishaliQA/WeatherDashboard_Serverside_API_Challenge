@@ -3,6 +3,7 @@
 Built weather dashboard challenge with search functionality to find current weather and 5 days future weather forcast condition based on city entered by user in search box. 
 
 ### Deployment Link
+https://vaishaliqa.github.io/WeatherDashboard_Serverside_API_Challenge/
 
 ### Usage
 Initial Page
