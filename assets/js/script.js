@@ -63,8 +63,12 @@ function getWeatherOneAPI(lat, long) {
       $(".color").css({ "background-color": "violet", color: "white" });
     }
 
+    //Convert Temp Kelvin to Fahrenheit
+    var kelvinTemp = response.current.temp;
+    var fahrenheitTemp = (kelvinTemp - 273.15) * 1.8 + 32;
+
     //populates others current weather data
-    $(temp).text("Temperature: " + response.current.temp + "° F");
+    $(temp).text("Temperature: " + fahrenheitTemp.toFixed(2) + "° F");
     $(humidity).text("Humidity: " + response.current.humidity + "%");
     $(wind).text("Wind Speed: " + response.current.wind_speed + " MPH");
     $(".color").text(response.current.uvi);
@@ -76,11 +80,14 @@ function getWeatherOneAPI(lat, long) {
     var dailyForecast = response.daily;
 
     for (i = 1; i < dailyForecast.length - 2; i++) {
+      //Convert Temp Kelvin to Fahrenheit
+      var kTemp = dailyForecast[i].temp.day;
+      var fTemp = (kTemp - 273.15) * 1.8 + 32;
       // create variable and assign value to those variable
       var dailyDate = moment
         .unix(dailyForecast[i].dt)
         .format("dddd MM/DD/YYYY");
-      var dailyTemp = dailyForecast[i].temp.day;
+      var dailyTemp = fTemp.toFixed(2);
       var dailyHum = dailyForecast[i].humidity;
       var dailyIcon = dailyForecast[i].weather[0].icon;
       var dailyWind = dailyForecast[i].wind_speed;
@@ -96,7 +103,7 @@ function getWeatherOneAPI(lat, long) {
         .addClass("img-fluid")
         .css({ width: "100%" });
       var pTemp = $("<p>").text("Temp: " + dailyTemp + "° F");
-      var pWind = $("<p>").text("Wind: " + dailyWind + " MPH")
+      var pWind = $("<p>").text("Wind: " + dailyWind + " MPH");
       var pHum = $("<p>").text("Humidity: " + dailyHum + "%");
 
       //appends the dynamic elements to the html
@@ -120,7 +127,7 @@ function searchButton() {
   var cityList = $("<button>");
   cityList.addClass("list-group-item list-group-item-action");
   //Convert first letter as capital
-  cityName = cityName.charAt(0).toUpperCase()+cityName.slice(1)
+  cityName = cityName.charAt(0).toUpperCase() + cityName.slice(1);
   cityList.text(cityName);
 
   //buttons are added to the list in the sidebar
