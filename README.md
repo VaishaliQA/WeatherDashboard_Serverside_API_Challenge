@@ -1,9 +1,9 @@
-# WeatherDashboard_Serverside_API_Challenge
+# Weather Dashboard
 ### Description
 Weather dashboard application with showing current weather and 5 days future weather forecast for the location entered by User. Dashboard also shows history of last city entered by user.
 
 ### Deployment Link
-https://vaishaliqa.github.io/WeatherDashboard_Serverside_API_Challenge/
+https://vaishaliqa.github.io/Weather_Dashboard/
 
 ### Usage
 Initial Page
